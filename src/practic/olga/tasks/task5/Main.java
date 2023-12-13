@@ -17,26 +17,19 @@ public class Main {
         System.out.println("Введите количество знчений n=");
         int n = input.nextInt();
 
-        formulaCalculationAndConclusion(n, x, dx, a);
+        for (int i = 0, count = 1; i < n; i++, count++) {
+            outputResult(count, roundingNumber(x), roundingNumber(calculationFormula(x, a)));
+            x += dx;
+        }
+
 
     }
 
-    public static void formulaCalculationAndConclusion(int n, double x, double dx, double a) {
-
-        for (int i = 0, count = 1; i < n; i++, count++) {
-
-            double y;
-
-            if (x <= 0) {
-                y = a / 2 * (Math.exp(x / a) + (Math.exp(-x / a)));
-            } else {
-                y = 4 * Math.pow(a, 3) / (Math.pow(x, 2) + 4 * Math.pow(a, 2));
-            }
-
-            outputResult(count, roundingNumber(x), roundingNumber(y));
-
-            x += dx;
-
+    public static double calculationFormula(double x, double a) {
+        if (x <= 0) {
+            return a / 2 * (Math.exp(x / a) + (Math.exp(-x / a)));
+        } else {
+            return 4 * Math.pow(a, 3) / (Math.pow(x, 2) + 4 * Math.pow(a, 2));
         }
     }
 
