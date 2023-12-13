@@ -18,10 +18,12 @@ public class Main {
         int n = input.nextInt();
 
         for (int i = 0, count = 1; i < n; i++, count++) {
-            outputResult(count, roundingNumber(x), roundingNumber(calculationFormula(x, a)));
-            x += dx;
-        }
 
+            outputResult(count, roundingNumber(x), roundingNumber(calculationFormula(x, a)));
+
+            x += dx;
+
+        }
 
     }
 
