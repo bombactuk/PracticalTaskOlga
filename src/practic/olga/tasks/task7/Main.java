@@ -34,4 +34,5 @@ public class Main {
     public static void outputResult(double x, double z, double result) {
         System.out.println("При x=" + x + " z=" + z + " Функция=" + result);
     }
+
 }
